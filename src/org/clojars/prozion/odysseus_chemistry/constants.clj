@@ -2,6 +2,8 @@
   (:require [clojure.string :as s]
             ))
 
+(def R 8.314) ; (/ J (* mole K))
+
 ; elements of periodic table of Mendeleev (PTM)
 (def PTM
   {:H {:n 1 :m 1.00794}

@@ -20,6 +20,6 @@
                   ["deploy"]
                   ]
   :repl-options {
-    :init-ns org.clojars.prozion.odysseus-chemistry.moles
+    :init-ns org.clojars.prozion.odysseus-chemistry.repl
   }
 )

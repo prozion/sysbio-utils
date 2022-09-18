@@ -1,4 +1,4 @@
-(ns org.clojars.prozion.odysseus-chemistry.moles
+(ns org.clojars.prozion.odysseus-chemistry.molecules
   (:require [clojure.string :as s]
             [org.clojars.prozion.odysseus-chemistry.constants :refer :all]
             [org.clojars.prozion.odysseus.utils :refer :all]
@@ -15,7 +15,7 @@
   (let [formula (name formula)
         atom-ratios (s/split formula #"-")
         atom-ratios (map (fn [expr]
-                            (let [[_ atom ratio] (re-matches #"([A-Z]+)(\d+)?" expr)]
+                            (let [[_ atom ratio] (re-matches #"([A-Za-z]+)(\d+)?" expr)]
                               [atom ratio]))
                           atom-ratios)]
     (reduce
@@ -23,3 +23,5 @@
           (+ acc (* (get-standard-atomic-weight atom) (->integer (or ratio 1)))))
       0
       atom-ratios)))
+
+(def mm get-molecular-mass)
